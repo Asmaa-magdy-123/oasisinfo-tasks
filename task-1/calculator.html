@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+<div class="calc">
+
+    <h1>Calculator</h1>
+
+    <div class="container">
+    <div class="result_square">
+        <p id="p"></p>
+
+    </div>
+
+    <div class="controls">
+        <button class="math_buttons tool">(</button>
+        <button class="math_buttons tool">)</button>
+        <button class="control_button " id="ans">ans</button>
+        <button class="control_button" id="del">del</button>
+        <button class="control_button " id="clear">clear</button>
+
+        <button class="numbers tool">7</button>
+        <button class="numbers tool">8</button>
+        <button class="numbers tool">9</button>
+        <button class="math_buttons tool">%</button>
+        <button class="math_buttons tool">√</button>
+
+        <button class="numbers tool">4</button>
+        <button class="numbers tool">5</button>
+        <button class="numbers tool">6</button>
+        <button class="math_buttons tool">×</button>
+        <button class="math_buttons tool">÷</button>
+
+        <button class="numbers tool">1</button>
+        <button class="numbers tool">2</button>
+        <button class="numbers tool">3</button>
+        <button class="math_buttons tool">+</button>
+        <button class="math_buttons tool">-</button>
+
+        <button class="math_buttons tool">.</button>
+        <button class="numbers tool">0</button>
+        <button class="math_buttons tool">±</button>
+        <button class="control_button " id="enter">Enter</button>
+        
+
+
+    </div>
+</div>
+</div>
+
+
+
+
+<script>
+
+    var p= document.getElementById("p");
+    var enter= document.getElementById("enter");
+
+    var del= document.getElementById("del");
+    var clear= document.getElementById("clear");
+    // var enter= document.getElementById("enter");
+
+
+var btns = document.querySelectorAll(".tool");
+  
+  
+  
+
+  btns.forEach(btn => {
+                btn.addEventListener("click", () => {
+
+                    p.innerText += btn.innerText;
+                    p.style.color="white";
+
+                });
+            });
+
+            var arr=[];
+            enter.addEventListener("click",() =>{
+        
+                    if(p.innerText.includes("%")){
+                        p.innerText= eval(p.innerText.replace("%", "/100"));
+                    }
+
+                   else if(p.innerText.includes("×")){
+                        p.innerText= eval(p.innerText.replace("×", "*"));
+                    }
+
+                    else if(p.innerText.includes("÷")){
+                        p.innerText= eval(p.innerText.replace("÷", "/"));
+                    }
+                    else{
+                        p.innerText= eval(p.innerText);
+                    }
+            });
+
+            clear.addEventListener("click",() =>{
+                p.innerText= '';
+            });
+
+            del.addEventListener("click",() =>{
+                p.innerText= p.innerText.slice(0,-1);
+            });
+
+            
+
+</script>
+
+
+    
+</body>
+</html>

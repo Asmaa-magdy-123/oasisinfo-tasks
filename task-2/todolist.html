@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todolist.css">
+    <title>To Do List</title>
+</head>
+<body>
+    
+<div class="todo">
+
+    <h1>To Do List</h1>
+    
+    <div class="list">
+    <div class="container">
+
+    <div class="details">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+    
+        <label for="area">Description</label>
+        <textarea name="area" id="desc" cols="30" rows="10"></textarea>
+        <button onclick="send()">Send</button>
+    </div>
+
+    <div class="table">
+        <table id="table">
+            <thead>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </thead>
+        </table>
+    </div>
+    </div>
+    <img src="torsion.png" alt="">
+    </div>
+</div>
+
+
+<script>
+
+var title= document.getElementById("title");
+var desc= document.getElementById("desc");
+var table= document.getElementById("table");
+
+
+
+
+function send(){
+
+
+
+var row= document.createElement("tr");
+var row_data_title= document.createElement("td");
+var row_data_desc= document.createElement("td");
+var row_data_del= document.createElement("td");
+var row_data_edit= document.createElement("td");
+
+
+var button_del= document.createElement("button");
+var button_edit= document.createElement("button");
+var row_data_input= document.createElement("input");
+
+row_data_input.setAttribute("type","checkbox");
+
+
+
+button_del.innerText="delete";
+button_edit.innerText="edit";
+
+
+    row_data_title.append(row_data_input);
+    row_data_title.append(title.value);
+    
+
+    row_data_desc.append(desc.value);
+    row_data_del.append(button_del);
+    row_data_edit.append(button_edit);
+
+
+    row.appendChild(row_data_title);
+    row.appendChild(row_data_desc);
+    row.appendChild(row_data_del);
+    row.appendChild(row_data_edit);
+
+
+    table.appendChild(row);
+
+    
+
+    row_data_del.style.paddingLeft="40px";
+    row_data_del.style.paddingRight="40px";
+
+    row_data_edit.style.paddingLeft="40px";
+    row_data_edit.style.paddingRight="40px";
+
+    row_data_desc.style.paddingLeft="40px";
+    row_data_desc.style.paddingRight="40px";
+
+    row_data_title.style.paddingLeft="40px";
+    row_data_title.style.paddingRight="40px";
+
+    row_data_del.style.borderBottom="0.5px solid black"
+    row_data_desc.style.borderBottom="0.5px solid black"
+
+    row_data_edit.style.borderBottom="0.5px solid black"
+    
+    row_data_title.style.borderBottom="0.5px solid black"
+
+
+
+    button_del.addEventListener("click", function(){
+
+        row.remove(row);
+    });
+
+    button_edit.addEventListener("click", function(e){
+
+        
+        title.value = row_data_title.innerText;
+        desc.value = row_data_desc.innerText;
+
+
+        row.remove(row);
+
+});
+
+row_data_input.addEventListener("click",() =>{
+    row_data_title.style.textDecoration="line-through";
+    row_data_title.style.color="grey";
+
+
+    row_data_desc.style.textDecoration="line-through";
+    row_data_desc.style.color="grey";
+
+    row_data_del.remove(button_del);
+    row_data_edit.remove(button_edit);
+
+
+
+})
+
+title.value="";
+    desc.value="";
+    
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

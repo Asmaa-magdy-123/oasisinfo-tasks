@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <div class="main">
+        
+        <!-- <div></div> -->
+
+        <div id="container" class="container">
+            <h1 id="h1">Login</h1>
+
+            <img class="down" src="down.png" alt="" data-aos="fade-right">
+
+            <div class="content">
+                <input id="user" type="text" placeholder="username"><br>
+                <input id="pass" type="password" placeholder="password">
+                <p id="error"></p>
+
+                <input id="username" type="text" placeholder="username"><br>
+                <input id="password" type="password" name="password" placeholder="password" onsubmit="encryptform()">
+
+                <input id="confirm_pass" type="password" placeholder="confirm password">
+
+                <!-- <input id="email" type="email" placeholder="e-mail"> -->
+
+
+            </div>
+            
+             <img class="up" src="arrow.png" alt="" data-aos="fade-left"> 
+             
+
+             <button id="submit"><a id="link" href="#">submit</a></button>
+             <button id="sign_in">Sign in</button>
+
+             <p id="p">if you do not have E-mail?<a id="a" href="#"><b>Register Now</b></a></p>
+            
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration:1400
+        });
+      </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+
+      <script>
+
+
+
+var h1= document.getElementById("h1");
+var p=document.getElementById("p");
+
+var user=document.getElementById("user");
+var pass=document.getElementById("pass");
+var username=document.getElementById("username");
+var password=document.getElementById("password");
+var container=document.getElementById("container");
+var a=document.getElementById("a");
+var confirm_pass=document.getElementById("confirm_pass");
+var error= document.getElementById("error");
+var submit= document.getElementById("submit");
+var link= document.getElementById("link");
+var signIn= document.getElementById("sign_in");
+
+
+
+
+let string =JSON.stringify(password.value) ;
+   const secret = "heluyg";
+   let encrypted = CryptoJS.AES.encrypt(string,secret).toString();
+
+
+
+
+var array;
+var arr=["aya_123","123"];
+
+a.addEventListener("click",() =>{
+    h1.innerText="registration";
+    confirm_pass.style.display="inline-block";
+    p.style.display="none"
+    submit.style.display="none";
+    signIn.style.display="block";
+    user.style.display="none";
+    pass.style.display="none";
+    username.style.display="inline-block";
+    password.style.display="inline-block";
+
+
+    
+    
+
+signIn.addEventListener("click",() =>{
+
+    
+     array =[username.value,encrypted];
+
+    // console.log(array);
+
+    if(confirm_pass.value !== password.value){
+        error.innerText="two passwords do not typical";
+        error.style.color="red";
+    }
+    else if(username.value === "" || password.value === ""){
+        error.innerText="you must fill the form";
+        error.style.color="red";
+
+    }
+    else {
+        h1.innerText="Login";
+        confirm_pass.style.display="none";
+        signIn.style.display="none";
+        submit.style.display="block";
+        p.style.display="block";
+    error.style.display="none";
+    username.style.display="none";
+    password.style.display="none";
+
+    user.style.display="inline-block";
+    pass.style.display="inline-block";
+
+    }
+
+});
+});
+
+  submit.addEventListener("click", () =>{
+
+    if((user.value === arr[0] && pass.value === arr[1]) || (user.value === array[0] && pass.value === password.value) ){
+        link.setAttribute("href","https://www.google.com/");
+
+    }
+  });
+  
+  
+
+
+  
+  
+
+      </script>
+
+</body>
+</html>

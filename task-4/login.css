@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    height: 100vh;
+    background-color: rgb(218, 232, 244);
+}
+.main{
+background-color: rgb(164, 209, 249);
+    width: auto;
+    height: 50vh;
+      display: flex;
+    align-items: center;
+    /* justify-content: center; */
+
+}
+
+.container{
+    
+    margin-left: 35%;
+    margin-top: 400px;
+    padding: 30px; 
+    height: auto;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 0.5px solid rgb(252, 251, 251);
+box-shadow: 1px 1px 7px rgb(101, 101, 248);
+
+}
+#user, #pass,#username,#password{
+    margin-bottom: 80px;
+    padding: 10px;
+    width: 250px;
+    margin-top: -400px;
+}
+#confirm_pass{
+    padding: 10px;
+    width: 250px;
+    margin-top: -400px;
+    margin-bottom: 30px;
+}
+.down{
+    width: 100px;
+    height: 100px;
+    margin-left: -100px;
+}
+.up{
+    width: 100px;
+    height: 100px;
+    margin-left: 280px; 
+    margin-top: -110px;
+}
+#sign_in{
+    display: none;
+}
+
+button{
+    background-color: navy;
+    color: aliceblue;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 35px;
+    border-radius: 30px;
+    width: 120px;
+    margin-left: 90px;
+    margin-top: -30px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+button a{
+    color: aliceblue;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(7, 183, 210);
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: navy;
+}
+
+p{
+    font-size: small;
+
+}
+#confirm_pass{
+    display: none;
+    margin-bottom: 80px;
+    margin-top: 3px;
+}
+/* #email{
+    display: none;
+    margin-bottom: 80px;
+    margin-top: 3px;
+    padding: 10px;
+    width: 250px;
+} */
+#username, #password{
+display: none;
+margin-top: 20px;
+}
+

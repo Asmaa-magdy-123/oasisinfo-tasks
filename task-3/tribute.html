@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tribute</title>
+    <link rel="stylesheet" href="tribute.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="icon"><button id="main_button"><img src="circles.png" alt=""></button>
+        <div class="menu" id="menu">
+            <img id="life" src="life.png" alt="">
+        <img id="star" src="star-badge.png" alt="">
+        </div>
+        
+        
+        
+        </div>
+        
+            <div class="content" >
+            
+                
+
+                    <h1 id="h1" data-aos="fade-right">Steve Jobs</h1>
+                    <h2 id="h2" data-aos="fade-right">1955-2011</h2>
+                    <p  id="p" >Jobs was born in San Francisco to a Syrian father and Swiss-German American mother. He was adopted shortly after his birth. He attended Reed College in 1972 before withdrawing that same year. In 1974, he traveled through India seeking enlightenment before later studying Zen Buddhism. He and Wozniak co-founded Apple in 1976 to sell Wozniak's Apple I personal computer. Together the duo gained fame and wealth a year later with production and sale of the Apple II, one of the first highly successful mass-produced microcomputers. Jobs saw the commercial potential of the Xerox Alto in 1979, which was mouse-driven and had a graphical user interface (GUI). This led to the development of the unsuccessful Apple Lisa in 1983, followed by the breakthrough Macintosh in 1984, the first mass-produced computer with a GUI. The Macintosh introduced the desktop publishing industry in 1985 with the addition of the Apple LaserWriter, the first laser printer to feature vector graphics.</p>
+                    <p id="apple_p"><img class="apple_img" src="apple.png" alt=""> 
+                        In 1985, Jobs departed Apple after a long power struggle with the company's board and its then-CEO, John Sculley.[3] That same year, Jobs took some Apple employees with him to found NeXT, a computer platform development company that specialized in computers for higher-education and business markets, serving as its CEO. In addition, he helped develop the visual effects industry when he funded the computer graphics division of George Lucas's Lucasfilm in 1986. The Graphics Group eventually spun off independently as Pixar, producing the first 3D computer-animated feature film Toy Story (1995) and becoming a leading animation studio, producing over 27 films since.
+                    </p>
+    
+            </div>
+
+        <div class="img">
+        <img src="steve_jobs.jpg"  data-aos="fade-left">
+        </div>
+        
+
+   
+
+    </div>
+</body>
+<script>
+    AOS.init({
+        duration:1400
+    });
+  </script>
+
+  <script>
+    var main_button= document.getElementById("main_button");
+    var menu=document.getElementById("menu");
+    var life= document.getElementById("life");
+    var star= document.getElementById("star");
+    var p= document.getElementById("p");
+    var h1= document.getElementById("h1");
+    var h2=document.getElementById("h2");
+    var apple_p=document.getElementById("apple_p");
+
+
+
+    
+    main_button.addEventListener("mouseover",()=>{
+
+        menu.style.display="flex";
+        menu.style.flexDirection="column";
+
+    //     img.forEach(btn =>{
+    //     btn.style.display="block";
+    // });
+});
+
+    menu.addEventListener("mouseleave",()=>{
+
+        menu.style.display="none";
+
+});
+
+life.addEventListener("click", ()=>{
+   
+    h1.style.display="none"
+h2.style.display="none"
+    p.style.display="block";
+
+
+   
+});
+star.addEventListener("click", ()=>{
+    p.style.display="none";
+    apple_p.style.display="block";
+});
+
+
+  
+  </script>
+</html>

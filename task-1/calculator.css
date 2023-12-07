@@ -1,0 +1,74 @@
+.calc{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(251, 253, 253);
+}
+h1{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 330px;
+    border: 0.5px solid rgb(14, 13, 13);
+    padding: 20px;
+    background-color: black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px rgb(34, 34, 113);
+}
+.result_square{
+width: 350px;
+height: 75px;
+margin-bottom: 20px;
+background-color: black;
+border-bottom: 0.5px solid rgb(250, 246, 246);
+border-bottom-width: 2px;
+}
+
+.controls{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.controls button{
+    width: 65px;
+    height: 30px;
+    background-color: rgb(160, 162, 162);
+margin-bottom: 10px;
+margin-right: 5px;
+border-radius: 30px;
+color: rgb(241, 238, 238);
+font-weight: bold;
+cursor: pointer;
+}
+
+.math_buttons:hover{
+    zoom: 99%;
+}
+
+#enter{
+    width: 135px;
+}
+
+ .controls .control_button{
+    background-color: rgb(225, 149, 7);
+}
+.controls .control_button:hover{
+    background-color: rgb(192, 125, 0);
+}
+
+.controls .numbers{
+    background-color: rgb(228, 236, 243);
+    color: black;
+}
+.controls .numbers:hover{
+    background-color: rgb(41, 182, 198);
+}
